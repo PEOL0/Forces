@@ -24,7 +24,7 @@ forceSumAngle = 0.0
 def renderAscii(msg):
     terminal = os.get_terminal_size()
     welcome_fig = Figlet(
-        font="doh", justify="auto", width=getattr(terminal, "columns") + 100
+        font="doh", justify="auto", width=getattr(terminal, "columns")*2
     )
     print(welcome_fig.renderText(msg))
 
