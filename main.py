@@ -72,6 +72,7 @@ def renderAscii(msg):
     welcome_fig = Figlet(
         font="kban", justify="left", width=getattr(terminal, "columns")
     )
+    print()
     print(welcome_fig.renderText(msg))
     print('By: PEOL0', end='\n\n')
     print('Remember the math!', end='\n\n')
