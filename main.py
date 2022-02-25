@@ -7,25 +7,6 @@ import random
 randomFlag = False
 debugFlag = False
 
-forceDict = {}
-radDict = {}
-forceKey = "force{}"
-radKey = "angle{}"
-
-xDict = {}
-yDict = {}
-xKey = "x{}"
-yKey = "y{}"
-
-forceSum = 0.0
-forceSumAngle = 0.0
-
-xSum = 0.0
-ySum = 0.0
-
-global xDictValues
-global yDictValues
-
 
 def defAndClear():
     global forceDict
@@ -74,8 +55,8 @@ def renderAscii(msg):
     )
     print()
     print(welcome_fig.renderText(msg))
-    print('By: PEOL0', end='\n\n')
-    print('Remember the math!', end='\n\n')
+    print("By: PEOL0", end="\n\n")
+    print("Remember the math!", end="\n\n")
 
 
 def inputForces():
@@ -114,8 +95,7 @@ def updateForce(each):
     forceDict.update({forceKey.format(each + 1): newforce})
     if debugFlag == True:
         print(
-            "Uppdaterat " +
-            forceKey.format(each + 1) + " med värdet: " + str(newforce)
+            "Uppdaterat " + forceKey.format(each + 1) + " med värdet: " + str(newforce)
         )
 
 
@@ -130,8 +110,7 @@ def updateAngle(each):
 
     radDict.update({radKey.format(each + 1): newangle})
     if debugFlag == True:
-        print("Uppdaterat " + radKey.format(each + 1) +
-              " med värdet: " + str(newangle))
+        print("Uppdaterat " + radKey.format(each + 1) + " med värdet: " + str(newangle))
 
 
 def split():
@@ -151,8 +130,7 @@ def xComponentSplit(index, force, rad):
         xComponent = round(-abs(xComponent), 12)
     xDict.update({xKey.format(index + 1): xComponent})
     if debugFlag == True:
-        print("Uppdaterat " + xKey.format(index) +
-              " med värdet: " + str(xComponent))
+        print("Uppdaterat " + xKey.format(index) + " med värdet: " + str(xComponent))
 
 
 def yComponentSplit(index, force, rad):
@@ -161,8 +139,7 @@ def yComponentSplit(index, force, rad):
         yComponent = round(-abs(yComponent), 12)
     yDict.update({yKey.format(index + 1): yComponent})
     if debugFlag == True:
-        print("Uppdaterat " + yKey.format(index) +
-              " med värdet: " + str(yComponent))
+        print("Uppdaterat " + yKey.format(index) + " med värdet: " + str(yComponent))
 
 
 def method():
