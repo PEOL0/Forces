@@ -8,7 +8,7 @@ import random
 def defAndClear():
     global debugFlag
     global randomFlag
-    
+
     global forceDict
     global radDict
     global forceKey
