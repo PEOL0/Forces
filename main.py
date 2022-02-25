@@ -4,11 +4,11 @@ from pyfiglet import Figlet
 from alive_progress import alive_bar
 import random
 
-randomFlag = False
-debugFlag = False
-
 
 def defAndClear():
+    global debugFlag
+    global randomFlag
+    
     global forceDict
     global radDict
     global forceKey
@@ -27,6 +27,9 @@ def defAndClear():
 
     global xDictValues
     global yDictValues
+
+    randomFlag = False
+    debugFlag = False
 
     forceDict = {}
     radDict = {}
