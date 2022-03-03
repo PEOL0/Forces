@@ -148,10 +148,10 @@ def yComponentSplit(index, force, rad):
 def method():
     method = input("Välj operation: ")
     if method == "" or method == "+":
-        sum()
+        sumOfForces()
 
 
-def sum():
+def sumOfForces():
     global forceSum
     global xSum
     global ySum
