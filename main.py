@@ -74,23 +74,20 @@ def inputForces():
         randomFlag = True
 
     if randomFlag == True:
-        with alive_bar(int(forces[0]) * 2) as bar:
+        with alive_bar(int(forces[0])) as bar:
             for each in range(int(forces[0])):
-                updateForce(each)
-                bar()
-                updateAngle(each)
+                inputPrompt(each)
                 bar()
     else:
         for each in range(int(forces[0])):
-            updateForce(each)
-            updateAngle(each)
+            inputPrompt(each)
 
     if debugFlag == True:
         print(forceDict)
         print(radDict)
 
 
-def updateForce(each):
+def inputPrompt(each):
     newforce = random.uniform(-100, 100)
     if randomFlag != True:
         promt = "Storlek{}: "
@@ -101,9 +98,8 @@ def updateForce(each):
             "Uppdaterat " + forceKey.format(each + 1) + " med värdet: " + str(newforce)
         )
 
-
-def updateAngle(each):
     newangle = m.radians(random.uniform(0, 360))
+
     if randomFlag != True:
         prompt = "Vinkel{}: "
         newangle = m.radians(float(eval(input(prompt.format(each + 1)))))
@@ -111,7 +107,11 @@ def updateAngle(each):
     if newangle < 0:
         newangle = m.radians(360 + m.degrees(newangle))
 
-    radDict.update({radKey.format(each + 1): newangle})
+    if newforce < 0:
+        radDict.update({radKey.format(each + 1): newangle + m.radians(180)})
+    else:
+        radDict.update({radKey.format(each + 1): newangle})
+
     if debugFlag == True:
         print("Uppdaterat " + radKey.format(each + 1) + " med värdet: " + str(newangle))
 
